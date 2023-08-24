@@ -40,6 +40,7 @@ void check_instruc(stack_t **stack, char *buf, unsigned int l)
 		{"pop", ft_pop},
 		{"swap", ft_swap},
 		{"add", ft_add},
+		{"sub", ft_sub},
 		{"nop", NULL},
 		{NULL, NULL}
 	};
