@@ -42,4 +42,9 @@ char *op[2];
 stack_t *add_dnodeint(stack_t **head, const int n);
 size_t print_dlistint(const stack_t *h);
 void free_dlistint(stack_t *head);
+int ft_getline(char **buf, size_t *nb, FILE *stream);
+void ft_push(stack_t **stack, unsigned int line_number);
+void ft_pall(stack_t **stack, unsigned int line_number);
+void err_msg(const char *msg, unsigned int l);
+
 #endif
