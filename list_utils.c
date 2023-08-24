@@ -68,7 +68,7 @@ stack_t *add_dnodeint_end(stack_t **head, const int n)
 		return (NULL);
 	new = malloc(sizeof(stack_t));
 	if (!new)
-		return (NULL);
+		err_msg("Error: malloc failed\n", 0);
 	new->n = n;
 	new->next = NULL;
 	if (!(*head))
@@ -102,7 +102,7 @@ stack_t *add_dnodeint(stack_t **head, const int n)
 		return (NULL);
 	node = malloc(sizeof(stack_t));
 	if (!node)
-		return (NULL);
+		err_msg("Error: malloc failed\n", 0);
 	node->n = n;
 	node->prev = NULL;
 	if (*head == NULL)
