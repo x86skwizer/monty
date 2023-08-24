@@ -53,3 +53,18 @@ void ft_mul(stack_t **stack, unsigned int line_number)
 	(*stack)->next->n *= (*stack)->n;
 	delete_dnodeint_at_index(stack, 0);
 }
+
+/**
+ * ft_mod - mod top 2 elements of stack
+ * @stack: stack
+ * @line_number: line
+ */
+void ft_mod(stack_t **stack, unsigned int line_number)
+{
+	if (!stack || !*stack || !(*stack)->next)
+		err_msg("L%u: can't mod, stack too short\n", line_number);
+	if (!(*stack)->n)
+		err_msg("L%u: division by zero\n", line_number);
+	(*stack)->next->n %= (*stack)->n;
+	delete_dnodeint_at_index(stack, 0);
+}
