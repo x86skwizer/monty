@@ -15,7 +15,7 @@ void ft_push(stack_t **stack, unsigned int line_number)
 		free_dlistint(*stack);
 		err_msg("L%u: usage: push integer", line_number);
 	}
-	if (op[1][i] == '-')
+	if (op[1][i] == '-' || op[1][i] == '+')
 		i++;
 	while (op[1][i])
 	{
