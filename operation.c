@@ -42,3 +42,15 @@ void ft_pall(stack_t **stack, unsigned int line_number)
 		return;
 	print_dlistint(*stack);
 }
+
+/**
+ * ft_pint - print stack's top value
+ * @stack: stack
+ * @line_number: line
+ */
+void ft_pint(stack_t **stack, unsigned int line_number)
+{
+	if (!stack || !*stack)
+		err_msg("L%u: can't pint, stack empty\n", line_number);
+	printf("%d\n", (*stack)->n);
+}

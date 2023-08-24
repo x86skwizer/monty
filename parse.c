@@ -36,6 +36,7 @@ void check_instruc(stack_t **stack, char *buf, unsigned int l)
 	instruction_t func[] = {
 		{"push", ft_push},
 		{"pall", ft_pall},
+		{"pint", ft_pint},
 		{NULL, NULL}
 	};
 	int i;

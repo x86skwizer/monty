@@ -46,5 +46,6 @@ int ft_getline(char **buf, size_t *nb, FILE *stream);
 void ft_push(stack_t **stack, unsigned int line_number);
 void ft_pall(stack_t **stack, unsigned int line_number);
 void err_msg(const char *msg, unsigned int l);
+void ft_pint(stack_t **stack, unsigned int line_number);
 
 #endif
