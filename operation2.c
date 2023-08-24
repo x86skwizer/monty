@@ -34,7 +34,7 @@ void ft_sub(stack_t **stack, unsigned int line_number)
 void ft_div(stack_t **stack, unsigned int line_number)
 {
 	if (!stack || !*stack || !(*stack)->next)
-		err_msg("L%u: can't sub, stack too short\n", line_number);
+		err_msg("L%u: can't div, stack too short\n", line_number);
 	if (!(*stack)->n)
 		err_msg("L%u: division by zero\n", line_number);
 	(*stack)->next->n /= (*stack)->n;
