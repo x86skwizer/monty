@@ -13,7 +13,7 @@ void ft_push(stack_t **stack, unsigned int line_number)
 	if (!op[1] || !op[1][0])
 	{
 		free_dlistint(*stack);
-		err_msg("L%u: usage: push integer", line_number);
+		err_msg("L%u: usage: push integer\n", line_number);
 	}
 	if (op[1][i] == '-' || op[1][i] == '+')
 		i++;
@@ -22,7 +22,7 @@ void ft_push(stack_t **stack, unsigned int line_number)
 		if (op[1][i] < '0' || op[1][i] > '9')
 		{
 			free_dlistint(*stack);
-			err_msg("L%u: usage: push integer", line_number);
+			err_msg("L%u: usage: push integer\n", line_number);
 		}
 		i++;
 	}
