@@ -38,6 +38,7 @@ void check_instruc(stack_t **stack, char *buf, unsigned int l)
 		{"pall", ft_pall},
 		{"pint", ft_pint},
 		{"pop", ft_pop},
+		{"swap", ft_swap},
 		{NULL, NULL}
 	};
 	int i;

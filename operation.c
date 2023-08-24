@@ -66,3 +66,19 @@ void ft_pop(stack_t **stack, unsigned int line_number)
 		err_msg("L%u: can't pop an empty stack\n", line_number);
 	delete_dnodeint_at_index(stack, 0);
 }
+
+/**
+ * ft_swap - swap stack's top 2 elements
+ * @stack: stack
+ * @line_number: line
+ */
+void ft_swap(stack_t **stack, unsigned int line_number)
+{
+	int n;
+
+	if (!stack || !*stack || !(*stack)->next)
+		err_msg("L%u: can't swap, stack too short\n", line_number);
+	n = (*stack)->n;
+	(*stack)->n = (*stack)->next->n;
+	(*stack)->next->n = n;
+}

@@ -39,6 +39,7 @@ typedef struct instruction_s
 
 char *op[2];
 
+void ft_swap(stack_t **stack, unsigned int line_number);
 void ft_pop(stack_t **stack, unsigned int line_number);
 int delete_dnodeint_at_index(stack_t **head, unsigned int index);
 stack_t *add_dnodeint(stack_t **head, const int n);
