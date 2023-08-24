@@ -15,7 +15,7 @@ void ft_pchar(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * ft_pstr - print stack's top value
+ * ft_pstr - print string from top
  * @stack: stack
  * @line_number: line
  */
@@ -27,4 +27,18 @@ void ft_pstr(stack_t **stack, unsigned int line_number)
 	for ( ; tmp && tmp->n > 0 && tmp->n < 128; tmp = tmp->next)
 		printf("%c", (char)tmp->n);
 	printf("\n");
+}
+
+/**
+ * ft_rotl - rotates the stack
+ * @stack: stack
+ * @line_number: line
+ */
+void ft_rotl(stack_t **stack, unsigned int line_number)
+{
+	(void)line_number;
+	if (!stack || !*stack || !(*stack)->next)
+		return;
+	add_dnodeint_end(stack, (*stack)->n);
+	delete_dnodeint_at_index(stack, 0);
 }

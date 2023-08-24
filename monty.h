@@ -40,6 +40,7 @@ typedef struct instruction_s
 char *op[2];
 
 void ft_pstr(stack_t **stack, unsigned int line_number);
+void ft_rotl(stack_t **stack, unsigned int line_number);
 void ft_pchar(stack_t **stack, unsigned int line_number);
 void ft_mod(stack_t **stack, unsigned int line_number);
 void ft_mul(stack_t **stack, unsigned int line_number);
@@ -57,5 +58,6 @@ void ft_push(stack_t **stack, unsigned int line_number);
 void ft_pall(stack_t **stack, unsigned int line_number);
 void err_msg(const char *msg, unsigned int l);
 void ft_pint(stack_t **stack, unsigned int line_number);
+stack_t *add_dnodeint_end(stack_t **head, const int n);
 
 #endif

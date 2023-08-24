@@ -46,6 +46,7 @@ void check_instruc(stack_t **stack, char *buf, unsigned int l)
 		{"mod", ft_mod},
 		{"pchar", ft_pchar},
 		{"pstr", ft_pstr},
+		{"rotl", ft_rotl},
 		{"nop", NULL},
 		{NULL, NULL}
 	};
