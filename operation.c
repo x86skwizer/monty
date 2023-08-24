@@ -54,3 +54,15 @@ void ft_pint(stack_t **stack, unsigned int line_number)
 		err_msg("L%u: can't pint, stack empty\n", line_number);
 	printf("%d\n", (*stack)->n);
 }
+
+/**
+ * ft_pop - remove stack's top
+ * @stack: stack
+ * @line_number: line
+ */
+void ft_pop(stack_t **stack, unsigned int line_number)
+{
+	if (!stack || !*stack)
+		err_msg("L%u: can't pop an empty stack\n", line_number);
+	delete_dnodeint_at_index(stack, 0);
+}
