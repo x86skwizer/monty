@@ -40,6 +40,7 @@ typedef struct instruction_s
 char *op[2];
 
 void ft_sub(stack_t **stack, unsigned int line_number);
+void ft_div(stack_t **stack, unsigned int line_number);
 void ft_add(stack_t **stack, unsigned int line_number);
 void ft_swap(stack_t **stack, unsigned int line_number);
 void ft_pop(stack_t **stack, unsigned int line_number);
