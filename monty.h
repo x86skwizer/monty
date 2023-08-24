@@ -39,6 +39,7 @@ typedef struct instruction_s
 
 char *op[2];
 
+void ft_rotr(stack_t **stack, unsigned int line_number);
 void ft_pstr(stack_t **stack, unsigned int line_number);
 void ft_rotl(stack_t **stack, unsigned int line_number);
 void ft_pchar(stack_t **stack, unsigned int line_number);

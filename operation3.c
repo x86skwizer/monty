@@ -42,3 +42,27 @@ void ft_rotl(stack_t **stack, unsigned int line_number)
 	add_dnodeint_end(stack, (*stack)->n);
 	delete_dnodeint_at_index(stack, 0);
 }
+
+/**
+ * ft_rotr - reverse rotate stack
+ * @stack: stack
+ * @line_number: line
+ */
+void ft_rotr(stack_t **stack, unsigned int line_number)
+{
+	stack_t *tmp;
+	stack_t *tail;
+
+	(void)line_number;
+	if (!stack || !*stack || !(*stack)->next)
+		return;
+	tmp = *stack;
+	while (tmp->next)
+	{
+		tail = tmp;
+		tmp = tmp->next;
+	}
+	tail->next = NULL;
+	add_dnodeint(stack, tmp->n);
+	free(tmp);
+}
