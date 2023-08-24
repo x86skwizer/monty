@@ -14,10 +14,7 @@ char *ft_strdup(char *s)
 		return (NULL);
 	str = malloc((strlen(s) + 1) * sizeof(char));
 	if (!str)
-	{
-		/* print err */
-		exit(EXIT_FAILURE);
-	}
+		err_msg("Error: malloc failed\n", 0);
 	for (i = 0; s[i]; i++)
 		str[i] = s[i];
 	str[i] = '\0';
@@ -63,10 +60,7 @@ char *_strjoin(char *first, char *last)
 	size = strlen(first) + strlen(last);
 	new = malloc(sizeof(char) * (size + 1));
 	if (!new)
-	{
-		/*  print error and exit */
-		exit(EXIT_FAILURE);
-	}
+		err_msg("Error: malloc failed\n", 0);
 	for (i = 0; first[i]; i++)
 		new[i] = first[i];
 	for (j = 0; last[j]; j++)
@@ -88,9 +82,9 @@ int ft_getline(char **buf, size_t *nb, FILE *stream)
 	char *line, *tmp;
 
 	line = malloc(sizeof(char) * 10);
-	if (fgets(line, 10, stream) == NULL)
-		return (-1);
 	if (!line)
+		err_msg("Error: malloc failed\n", 0);
+	if (fgets(line, 10, stream) == NULL)
 		return (-1);
 	*buf = ft_strdup(line);
 	*nb = strlen(*buf);
