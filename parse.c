@@ -50,7 +50,7 @@ void check_instruc(stack_t **stack, char *buf, unsigned int l)
 	int i;
 
 	i = 0;
-	if (!op[0])
+	if (!op[0] || op[0][0] == '#')
 		return;
 	while (func[i].opcode)
 	{
