@@ -39,6 +39,7 @@ void check_instruc(stack_t **stack, char *buf, unsigned int l)
 		{"pint", ft_pint},
 		{"pop", ft_pop},
 		{"swap", ft_swap},
+		{"add", ft_add},
 		{NULL, NULL}
 	};
 	int i;
