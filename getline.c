@@ -85,7 +85,11 @@ int ft_getline(char **buf, size_t *nb, FILE *stream)
 	if (!line)
 		err_msg("Error: malloc failed\n", 0);
 	if (fgets(line, 10, stream) == NULL)
+	{
+		if (line)
+			free(line);
 		return (-1);
+	}
 	*buf = ft_strdup(line);
 	*nb = strlen(*buf);
 	while (line && !find_nl(line))

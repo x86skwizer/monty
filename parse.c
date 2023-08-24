@@ -67,7 +67,6 @@ int main(int ac, char **av)
 {
 	size_t nb = 0;
 	unsigned int l = 0;
-	int n;
 	char *buf = NULL;
 	FILE *file;
 	stack_t *stack = NULL;
@@ -82,8 +81,7 @@ int main(int ac, char **av)
 	}
 	while (1)
 	{
-		n = ft_getline(&buf, &nb, file);
-		if (n <= 0)
+		if (ft_getline(&buf, &nb, file) <= 0)
 		{
 			if (buf)
 				free(buf);
@@ -93,11 +91,18 @@ int main(int ac, char **av)
 		if (!op[0])
 		{
 			free(buf);
+			buf = NULL;
 			continue;
 		}
 		l++;
 		op[1] = strtok(NULL, " \t\n\v\f\r");
 		check_instruc(&stack, buf, l);
+		if (buf)
+			free(buf);
+		buf = NULL;
 	}
+	fclose(file);
+	if (stack)
+		free_dlistint(stack);
 	return (0);
 }
