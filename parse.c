@@ -40,6 +40,7 @@ void check_instruc(stack_t **stack, char *buf, unsigned int l)
 		{"pop", ft_pop},
 		{"swap", ft_swap},
 		{"add", ft_add},
+		{"nop", NULL},
 		{NULL, NULL}
 	};
 	int i;
@@ -51,7 +52,8 @@ void check_instruc(stack_t **stack, char *buf, unsigned int l)
 	{
 		if (!strcmp(func[i].opcode, op[0]))
 		{
-			func[i].f(stack, l);
+			if (func[i].f)
+				func[i].f(stack, l);
 			return;
 		}
 		i++;
