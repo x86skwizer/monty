@@ -71,7 +71,7 @@ void ft_pint(stack_t **stack, unsigned int line_number)
 void ft_pop(stack_t **stack, unsigned int line_number)
 {
 	if (!stack || !*stack)
-		err_msg("L%u: can't pglb.op an empty stack\n", line_number);
+		err_msg("L%u: can't pop an empty stack\n", line_number);
 	delete_dnodeint_at_index(stack, 0);
 }
 
