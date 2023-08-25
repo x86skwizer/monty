@@ -37,7 +37,18 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-char *op[2];
+/**
+ * struct data_s - global data
+ * @op: the opocodes and parms
+ * @mode: 1 for stack 2 for queue
+ */
+typedef struct data_s
+{
+	char *op[2];
+	int mode;
+} data_t;
+
+data_t glb;
 
 void ft_rotr(stack_t **stack, unsigned int line_number);
 void ft_pstr(stack_t **stack, unsigned int line_number);
@@ -60,5 +71,6 @@ void ft_pall(stack_t **stack, unsigned int line_number);
 void err_msg(const char *msg, unsigned int l);
 void ft_pint(stack_t **stack, unsigned int line_number);
 stack_t *add_dnodeint_end(stack_t **head, const int n);
+void print_msg(char *av);
 
 #endif

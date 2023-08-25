@@ -10,24 +10,28 @@ void ft_push(stack_t **stack, unsigned int line_number)
 	int i = 0;
 	int n;
 
-	if (!op[1] || !op[1][0])
+	if (!glb.op[1] || !glb.op[1][0])
 	{
 		free_dlistint(*stack);
 		err_msg("L%u: usage: push integer\n", line_number);
 	}
-	if (op[1][i] == '-' || op[1][i] == '+')
+	if (glb.op[1][i] == '-' || glb.op[1][i] == '+')
 		i++;
-	while (op[1][i])
+	while (glb.op[1][i])
 	{
-		if (op[1][i] < '0' || op[1][i] > '9')
+		if (glb.op[1][i] < '0' || glb.op[1][i] > '9')
 		{
 			free_dlistint(*stack);
 			err_msg("L%u: usage: push integer\n", line_number);
 		}
 		i++;
 	}
-	n = atoi(op[1]);
-	add_dnodeint(stack, n);
+	n = atoi(glb.op[1]);
+	if (glb.mode == 1)
+		add_dnodeint(stack, n);
+	else
+		add_dnodeint_end(stack, n);
+
 }
 
 /**
@@ -63,7 +67,7 @@ void ft_pint(stack_t **stack, unsigned int line_number)
 void ft_pop(stack_t **stack, unsigned int line_number)
 {
 	if (!stack || !*stack)
-		err_msg("L%u: can't pop an empty stack\n", line_number);
+		err_msg("L%u: can't pglb.op an empty stack\n", line_number);
 	delete_dnodeint_at_index(stack, 0);
 }
 

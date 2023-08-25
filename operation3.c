@@ -66,3 +66,13 @@ void ft_rotr(stack_t **stack, unsigned int line_number)
 	add_dnodeint(stack, tmp->n);
 	free(tmp);
 }
+
+/**
+ * print_msg - print msg and exit
+ * @av: string
+ */
+void print_msg(char *av)
+{
+	fprintf(stderr, "Error: Can't glb.open file %s\n", av);
+	exit(EXIT_FAILURE);
+}
