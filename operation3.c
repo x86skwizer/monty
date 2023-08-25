@@ -73,6 +73,6 @@ void ft_rotr(stack_t **stack, unsigned int line_number)
  */
 void print_msg(char *av)
 {
-	fprintf(stderr, "Error: Can't glb.open file %s\n", av);
+	fprintf(stderr, "Error: Can't open file %s\n", av);
 	exit(EXIT_FAILURE);
 }
