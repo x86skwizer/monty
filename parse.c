@@ -1,5 +1,7 @@
 #include "monty.h"
 
+data_t glb;
+
 /**
  * err_msg - print err msg
  * @msg: string

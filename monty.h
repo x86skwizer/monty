@@ -48,7 +48,7 @@ typedef struct data_s
 	int mode;
 } data_t;
 
-data_t glb;
+extern data_t glb;
 
 void ft_rotr(stack_t **stack, unsigned int line_number);
 void ft_pstr(stack_t **stack, unsigned int line_number);
