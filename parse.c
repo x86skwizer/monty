@@ -108,13 +108,13 @@ int main(int ac, char **av)
 			break;
 		}
 		glb.op[0] = strtok(buf, " \t\n\v\f\r");
+		l++;
 		if (!glb.op[0])
 		{
 			free(buf);
 			buf = NULL;
 			continue;
 		}
-		l++;
 		glb.op[1] = strtok(NULL, " \t\n\v\f\r");
 		check_instruc(&stack, buf, l);
 		if (buf)
