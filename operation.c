@@ -7,16 +7,20 @@
  */
 void ft_push(stack_t **stack, unsigned int line_number)
 {
-	int i = 0;
-	int n;
+	int i = 0, n;
 
 	if (!glb.op[1] || !glb.op[1][0])
 	{
 		free_dlistint(*stack);
 		err_msg("L%u: usage: push integer\n", line_number);
 	}
-	if (glb.op[1][i] == '-' || glb.op[1][i] == '+')
+	if (glb.op[1][i] == '-')
 		i++;
+	if (!glb.op[1][i])
+	{
+		free_dlistint(*stack);
+		err_msg("L%u: usage: push integer\n", line_number);
+	}
 	while (glb.op[1][i])
 	{
 		if (glb.op[1][i] < '0' || glb.op[1][i] > '9')
